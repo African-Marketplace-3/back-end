@@ -1,5 +1,6 @@
 // Update with your config settings.
-
+const pgConnection =
+	process.env.DATABASE_URL || 'postgresql://postgres@localhost/auth';
 module.exports = {
 	development: {
 		client: 'sqlite3',
