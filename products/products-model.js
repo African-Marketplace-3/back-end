@@ -5,7 +5,7 @@ module.exports = {
 	find,
 	findBy,
 	findById,
-	findProductByUSerId,
+	findProductByUserId,
 	update,
 	remove,
 };
@@ -39,7 +39,7 @@ function findById(id) {
 	return db('products').where({ id }).first();
 }
 
-function findProductByUSerId(userId) {
+function findProductByUserId(userId) {
 	return db('users')
 		.join('products', 'users.id', 'products.user_id')
 		.select(
@@ -54,8 +54,8 @@ function findProductByUSerId(userId) {
 		.where('users.id', userId);
 }
 
-function update(id, name) {
-	return db('products').where('id', Number(id)).update(name);
+function update(id, changes) {
+	return db('products').where({ id }).update(changes);
 }
 
 function remove(id) {
