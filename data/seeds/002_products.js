@@ -18,7 +18,7 @@ exports.seed = function (knex) {
 			user_id: 1,
 		},
 		{
-			name: 'Belt',
+			name: 'Belts',
 			description: 'leather',
 			market_location: 'Downtown',
 			quantity: '102',
